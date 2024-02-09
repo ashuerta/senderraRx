@@ -1,2 +1,2 @@
-# sx-portal-front
+# sx-front
 Prototype new version Senderra
