@@ -4,5 +4,17 @@
   "sourceRoot": "libs/auth/feature/src",
   "projectType": "library",
   "tags": [],
-  "targets": {}
+  "targets": {
+    "build": {
+      "options": {
+        "assets": [
+          {
+            "input": "./libs/shared/assets/src/lib/images",
+            "glob": "**/*",
+            "output": "/assets/"
+          }
+        ]
+      }
+    }
+  }
 }

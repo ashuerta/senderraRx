@@ -1,4 +1,5 @@
 import styles from './login-form-feature.module.scss';
+//import senderraLogo from 'assests/Senderra-Logo_Stacked_WHITE.png';
 import { Layout, Button, Checkbox, Form, Input, Flex } from 'antd';
 
 /* eslint-disable-next-line */
@@ -18,8 +19,13 @@ export function LoginFormFeature(props: LoginFormFeatureProps) {
   };
 
   return (
-    <Layout>
-      <Flex className={styles['login']} justify={'center'} align={'center'} gap="middle" wrap="wrap">
+      <Flex justify={'center'} align={'center'} gap="small" wrap="wrap">
+        <Layout className={styles['login']}>
+      <div className={styles['logo']}>
+          <a href="/">
+              <img src='Senderra-Logo_Stacked_WHITE.png' alt="" />
+          </a>
+      </div>
         <div className={styles['content']}>
         <Form
             labelCol={{ span: 12 }}
@@ -31,24 +37,28 @@ export function LoginFormFeature(props: LoginFormFeatureProps) {
             action="/Account/Login" className=" login-form" method="post">
             <h3 className="form-title">Sign In</h3>
             <div id="validationSummary" className="alert alert-danger display-hide"></div>
-            <Form.Item label="User Name">
-              <Input type="text" value="" name="UserName" id="UserName" autoComplete="off" placeholder="input placeholder" />
-            </Form.Item>
             <Form.Item<FieldType>
               label="Username"
               name="username"
+              style={{ fontWeight: 700 }}
               rules={[{ required: true, message: 'Please input your username!' }]}
               >
               <Input autoComplete="off" placeholder="Please input your username!"/>
             </Form.Item>
-            <div className="form-group">
-              <label htmlFor="UserName" className="control-label bold">User Name</label>
-              <input type="text" value="" name="UserName" id="UserName" autoComplete="off" className="validate form-control" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Password" className="control-label bold">Password</label>
-              <input type="password" value="" name="Password" id="Password" autoComplete="off" className="validate form-control" />
-            </div>
+            <Form.Item<FieldType>
+              label="Password"
+              name="password"
+              style={{ fontWeight: 700 }}
+              rules={[{ required: true, message: 'Please input your password!' }]}
+              >
+              <Input.Password/>
+            </Form.Item>
+            <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+              <Button className='srx-orange' type="primary" htmlType="submit">
+                Login
+              </Button>
+            </Form.Item>
+
             <div className="form-actions text-center">
               <button type="submit" className="btn uppercase srx-orange">Login</button>
               <div className="row" style={{ marginTop: '20px' }}>
@@ -67,8 +77,8 @@ export function LoginFormFeature(props: LoginFormFeatureProps) {
             </div>
         </Form>
         </div>
+        </Layout>
       </Flex>
-    </Layout>
   );
 }
 
