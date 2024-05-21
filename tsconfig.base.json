@@ -17,7 +17,7 @@
     "paths": {
       "@senderrarx/auth-data": ["libs/auth/data/src/index.ts"],
       "@senderrarx/auth-feature": ["libs/auth/feature/src/index.ts"],
-      "@senderrarx/shared-assets": ["libs/shared/assets/src/index.ts"]
+      "@senderrarx/common-assets": ["libs/common/assets/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
