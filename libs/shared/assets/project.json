@@ -3,18 +3,17 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/assets/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["type:assets", "scope:shared"],
   "targets": {
     "build": {
+      "executor": "@nx/vite:build",
       "options": {
-        "assets": [
-          {
-            "input": "/libs/shared/assets/src/lib/images",
-            "glob": "**/*",
-            "output": "/assets/"
-          }
-        ]
+          "outputPath": "dist/apps/sx-portal-ui/assets",
+          "configFile": "./vite.config.ts",
+          "buildLibsFromSource": true,
+          "skipTypeCheck": false,
+          "includeDevDependenciesInPackageJson": true
+        }
       }
-    }
   }
 }

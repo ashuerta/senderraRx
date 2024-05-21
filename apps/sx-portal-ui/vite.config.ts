@@ -30,6 +30,7 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    assetsInlineLimit: 0
   },
 
   test: {

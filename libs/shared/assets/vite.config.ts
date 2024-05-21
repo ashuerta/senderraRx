@@ -32,11 +32,12 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    assetsInlineLimit: 0,
     lib: {
       // Could also be a dictionary or array of multiple entry points.
       entry: 'src/index.ts',
       name: 'shared-assets',
-      fileName: 'index',
+      //fileName: 'index',
       // Change this to the formats you want to support.
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
@@ -46,4 +47,13 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
   },
+  experimental: {
+    renderBuiltUrl(filename: string, { hostType }: { hostType: 'js' | 'css' | 'html', type: 'public' | 'asset' }) {
+      if (hostType === 'js') {
+        return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+      } else {
+        return { relative: true }
+      }
+    }
+  }
 });

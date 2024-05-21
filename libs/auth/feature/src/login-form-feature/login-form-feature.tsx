@@ -1,5 +1,5 @@
 import styles from './login-form-feature.module.scss';
-//import senderraLogo from 'assests/Senderra-Logo_Stacked_WHITE.png';
+//import senderraLogo from './Senderra-Logo_Stacked_WHITE.png';
 import { Layout, Button, Checkbox, Form, Input, Flex } from 'antd';
 
 /* eslint-disable-next-line */
@@ -23,7 +23,8 @@ export function LoginFormFeature(props: LoginFormFeatureProps) {
         <Layout className={styles['login']}>
       <div className={styles['logo']}>
           <a href="/">
-              <img src='Senderra-Logo_Stacked_WHITE.png' alt="" />
+              <img src='/assets/common/Senderra-Logo_Stacked_WHITE.png' alt="" />
+              {/* <img src={senderraLogo} alt="" /> */}
           </a>
       </div>
         <div className={styles['content']}>
@@ -54,7 +55,7 @@ export function LoginFormFeature(props: LoginFormFeatureProps) {
               <Input.Password/>
             </Form.Item>
             <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-              <Button className='srx-orange' type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit">
                 Login
               </Button>
             </Form.Item>

@@ -10,6 +10,7 @@ export function App() {
     <div className={styles['container']}>
       < StyleProvider transformers = { [ legacyLogicalPropertiesTransformer ] }> 
           <LoginFormFeature />
+          <img src='./assets/common/images/Senderra-Logo_Stacked_WHITE.png' alt="" />
       </ StyleProvider >
     </div>
   );

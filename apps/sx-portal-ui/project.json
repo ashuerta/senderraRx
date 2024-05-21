@@ -3,19 +3,19 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/sx-portal-ui/src",
   "projectType": "application",
-  "implicitDependencies": ["shared-assets"],
   "targets": {
     "build": {
       "options": {
         "assets": [
           {
-            "input": "/libs/shared/assets/src/lib/images",
+            "input": "libs/common/assets/src/assets",
             "glob": "**/*",
-            "output": "/assets/"
+            "output": "/assets/common"
           }
         ]
       }
     }
   },
-  "tags": []
+  "tags": [],
+  "implicitDependencies": ["common-assets"]
 }

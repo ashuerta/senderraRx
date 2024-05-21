@@ -3,18 +3,18 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/auth/feature/src",
   "projectType": "library",
-  "tags": [],
   "targets": {
     "build": {
       "options": {
         "assets": [
           {
-            "input": "./libs/shared/assets/src/lib/images",
+            "input": "libs/common/assets/src/assets",
             "glob": "**/*",
-            "output": "/assets/"
+            "output": "/assets/common"
           }
         ]
       }
     }
-  }
+  },
+  "tags": []
 }
